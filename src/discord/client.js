@@ -19,6 +19,7 @@ const init = async (intents) => {
 
     await client.login(process.env.DISCORD_TOKEN);
     success("Client is logged in");
+
     return client;
   } catch (error) {
     err(error);
