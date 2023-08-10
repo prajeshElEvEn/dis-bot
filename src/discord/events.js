@@ -9,6 +9,5 @@ events.ready = async (client, bot) => {
 };
 
 events.messageCreate = async (client, message) => {
-  console.log(message);
   await activities.messages.onMessage(client, message);
 };
