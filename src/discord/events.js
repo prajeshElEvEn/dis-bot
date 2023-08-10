@@ -9,5 +9,9 @@ events.ready = async (client, bot) => {
 };
 
 events.messageCreate = async (client, message) => {
-  await activities.messages.onMessage(client, message);
+  try {
+    await activities.messages.onMessage(client, message);
+  } catch (error) {
+    err(error);
+  }
 };
