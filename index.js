@@ -1,14 +1,7 @@
-const { Client, IntentsBitField } = require("discord.js");
-const dotenv = require("dotenv");
-dotenv.config();
+const discord = require("./src/discord");
 
-const client = new Client({
-  intents: [
-    IntentsBitField.Flags.Guilds,
-    IntentsBitField.Flags.GuildMembers,
-    IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.MessageContent,
-  ],
-});
+const initializeApp = async () => {
+  const client = await discord();
+};
 
-client.login(process.env.DISCORD_TOKEN);
+initializeApp();
